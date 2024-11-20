@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class JobTest {
-    //TODO: Create your unit tests here
+
     @Test
     public void testSettingJobId() {
         Job firstJob = new Job();
