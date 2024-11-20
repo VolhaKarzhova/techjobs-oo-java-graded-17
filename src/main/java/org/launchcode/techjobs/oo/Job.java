@@ -92,4 +92,22 @@ public class Job {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+        String noDataMessage = "Data not available";
+        if (this.getName().isBlank() && this.getEmployer().getValue().isBlank() && this.getLocation().getValue().isBlank()
+                && this.getPositionType().getValue().isBlank() && this.getCoreCompetency().getValue().isBlank()) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        return newLine + "ID: " + this.id +
+                newLine + "Name: " + (this.getName().isBlank() ? noDataMessage : this.getName()) +
+                newLine + "Employer: " + (this.getEmployer().getValue().isBlank() ? noDataMessage : this.getEmployer()) +
+                newLine + "Location: " + (this.getLocation().getValue().isBlank() ? noDataMessage : this.getLocation()) +
+                newLine + "Position Type: " + (this.getPositionType().getValue().isBlank() ? noDataMessage :
+                this.getPositionType()) +
+                newLine + "Core Competency: " + (this.getCoreCompetency().getValue().isBlank() ? noDataMessage :
+                this.getCoreCompetency()) + newLine;
+    }
 }
